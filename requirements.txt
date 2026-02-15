@@ -1,0 +1,8 @@
+streamlit
+pandas
+google-generativeai
+pypdf
+langchain-text-splitters
+rank-bm25
+chromadb
+sentence-transformers

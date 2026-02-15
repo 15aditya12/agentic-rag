@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentic-rag
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: agentic-rag
+  template:
+    metadata:
+      labels:
+        app: agentic-rag
+    spec:
+      containers:
+        - name: agentic-rag
+          image: agentic-rag:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
+          env:
+            - name: STREAMLIT_SERVER_PORT
+              value: "8501"
+            - name: STREAMLIT_SERVER_ADDRESS
+              value: "0.0.0.0"
